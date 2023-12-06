@@ -1,0 +1,7 @@
+<label>Enter employee ID:
+  <input #employeenum type='text' placeholder="id" (keyup.enter)="addSchedule(employeenum.value)">
+</label>
+<!--addSchedule #employeenum type='text' placeholder="id" (keyup.enter)="addSchedule(employeenum.value)"-->
+<button (click)="addSchedule(employeenum.value)">New Schedule</button>
+<br><label *ngIf="error">{{error.error}}</label>
+<br>

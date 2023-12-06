@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <br>
+  <form>
+    <fieldset style="width:200px, ">
+      <legend>Choose Title</legend>
+      <div>
+        <input type="radio" id="get" name="app" [value]=1 checked
+               [(ngModel)]="appsection"/>
+        <label for="get">Managers Only</label>
+      </div>
+      <div>
+        <input type="radio" id="add" name="app" [value]=2
+               [(ngModel)]="appsection"/>
+        <label for="add">Employees </label>
+      </div>
+    </fieldset>
+  </form>
+  <div *ngIf="appsection==1">
+    <br>
+    <app-employee></app-employee>
+  </div>
+  <br>
+  <div *ngIf="appsection==2">
+    <app-request-off></app-request-off>
+    <br>
+    <br>
+  </div>

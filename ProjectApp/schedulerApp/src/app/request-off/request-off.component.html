@@ -1,0 +1,42 @@
+<h3>
+  Day off requests (Must give at least two weeks notice)
+</h3>
+<div>
+  <label>Date:
+    <input #newdaterequest type='text' placeholder="date"(keyup.enter)="addRequestToSchedule(newdaterequest.value)"/>
+  </label>
+
+</div>
+<br>
+
+<p>Note that management must first approve all days off request. Not all request are guaranteed.</p>
+
+<button (click)="addRequestToSchedule(newdaterequest.value)">Request Off</button>
+<br><br><label *ngIf="error">{{error.error}}</label>
+
+<h3>
+  Days off Requested
+</h3>
+<!--The content below is only a placeholder and can be replaced.-->
+<style>
+  table, td {
+    border: 1px solid black;
+  }
+</style>
+<div style="text-align:center">
+  <!--The following is a table of requested days off (might not be used)-->
+  <table *ngIf="request">
+    <tr>
+      <!--The following is the table header-->
+      <th>Date</th>
+      <th>Satus</th>
+      <th>#</th>
+    </tr>
+    <!--The following creates the first row and its data-->
+    <tr>
+      <li *ngFor="let date of date">
+        {{ date }}
+      </li>
+    </tr>
+  </table>
+</div>
